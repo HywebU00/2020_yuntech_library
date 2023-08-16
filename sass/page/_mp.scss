@@ -1145,8 +1145,12 @@
     @include gutter();
     margin: 0.5em 0;
 
-    h3 {
+    h3,
+    .titleH3 {
+      font-size: 1.125rem;
+      font-weight: bold;
       color: $primaryColor;
+      margin: 0.5rem 0;
     }
 
     .schedule_content {

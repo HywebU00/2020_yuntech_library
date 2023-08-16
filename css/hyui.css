@@ -6896,8 +6896,12 @@ body.noscroll {
     width: 50%;
   }
 }
-.library_info .schedule h3 {
+.library_info .schedule h3,
+.library_info .schedule .titleH3 {
+  font-size: 1.125rem;
+  font-weight: bold;
   color: #cd4d00;
+  margin: 0.5rem 0;
 }
 .library_info .schedule .schedule_content {
   line-height: 1.8;
