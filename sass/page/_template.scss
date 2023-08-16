@@ -1,234 +1,246 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    background: url(../images/bg_top.svg) top center no-repeat;
-    background-size: contain;
-    @media screen and (max-width: 1920px){
-        background-size: 1920px;
-    }
-    &.noscroll {
-        position: static !important;
-        width: 100%;
-        height: 100%;
-        overflow: hidden !important;
-        overflow-y: hidden !important;
-        margin: 0;
-        padding: 0;
-    }
+  background: url(../images/bg_top.svg) top center no-repeat;
+  background-size: contain;
+  @media screen and (max-width: 1920px) {
+    background-size: 1920px;
+  }
+  &.noscroll {
+    position: static !important;
+    width: 100%;
+    height: 100%;
+    overflow: hidden !important;
+    overflow-y: hidden !important;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 // 最外圍預設為100%
 .wrapper {
-    width: 100%;
-    margin: 0px auto;
-    position:relative;
+  width: 100%;
+  margin: 0px auto;
+  position: relative;
 
-    @include screen('mobile') {
-        background: #FFF;
-        overflow: hidden;
-        overflow-y: auto;
-    }
+  @include screen('mobile') {
+    background: #fff;
+    overflow: hidden;
+    overflow-y: auto;
+  }
 }
 
 // 整體共用container樣式，請注意首頁切版頁面的整齊
 .container {
-    @include gutter();
-    margin: 0 auto;
-    max-width: $container-max; //請看_variable.scss
+  @include gutter();
+  margin: 0 auto;
+  max-width: $container-max; //請看_variable.scss
 }
 
 .main {
-    position: relative;
-    margin: 0 auto;
+  position: relative;
+  margin: 0 auto;
 
-    // 可先設定一個中央區塊最大寬，限制accesskey對齊
-    @include screen('mobile') {
-        padding-top: 60px;
-        background-image: none;
+  // 可先設定一個中央區塊最大寬，限制accesskey對齊
+  @include screen('mobile') {
+    padding-top: 60px;
+    background-image: none;
+  }
+  h2 {
+    &.title {
+      font-size: 1.625em;
+      font-weight: normal;
+      color: $color-word;
+      position: relative;
+      padding-top: 28px;
+      text-align: center;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-left: -10px;
+        display: block;
+        width: 20px;
+        height: 19px;
+        background: url(../images/icon_title.png) center no-repeat;
+        background-size: contain;
+      }
     }
-    h2 {
-        &.title {
-            font-size: 1.625em;
-            font-weight: normal;
-            color: $color-word;
-            position: relative;
-            padding-top: 28px;
-            text-align: center;
-            &:before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 50%;
-                margin-left: -10px;
-                display: block;
-                width: 20px;
-                height: 19px;
-                background: url(../images/icon_title.png) center no-repeat;
-                background-size: contain;
-            }
-        }
-    }
-    
-    // .reader_service{
-    //     padding-left: 3.5em;
-    //     @include screen('mobile'){
-    //         padding-left: 0;
-    //     }
-    // }
+  }
 
+  // .reader_service{
+  //     padding-left: 3.5em;
+  //     @include screen('mobile'){
+  //         padding-left: 0;
+  //     }
+  // }
 }
 
 ////////////////////////////////////////////////////////////
 // 為了與首頁區隔，請在內頁加上innerpage ClassName
 .innerpage {
+  @include screen('mobile') {
+    padding-top: 60px;
+  }
+  // .title_wrap{
+  //     text-align: left;
+  //     h2.title{
+  //         display:inline-block;
+  //         position: relative;
+  //         padding-left: 1.5em;
+  //         &:after{
+  //             content: "";
+  //             position: absolute;
+  //             width: 80px;
+  //             height: 2px;
+  //             transform: rotate(-45deg);
+  //             left: 0;
+  //             bottom: 15px;
+  //         }
+  //     }
+  // }
+  h3.title {
+    display: inline-block;
+    position: relative;
+  }
+
+  > .container {
+    @include gutter(); //gutter 代表左右要留白
+  }
+
+  .main_image {
+    // padding-left:calc( ( 100% - 1100px ) / 2 );
+    // background:$lightColor;
     @include screen('mobile') {
-        padding-top: 60px;
+      margin-bottom: 0;
     }
-    // .title_wrap{
-    //     text-align: left;
-    //     h2.title{
-    //         display:inline-block;
-    //         position: relative;
-    //         padding-left: 1.5em;
-    //         &:after{
-    //             content: "";
-    //             position: absolute;
-    //             width: 80px;
-    //             height: 2px;
-    //             transform: rotate(-45deg);
-    //             left: 0;
-    //             bottom: 15px;
-    //         }
+    > .container {
+      background: url(../images/main_banner01.jpg) top center no-repeat;
+      background-size: cover;
+      height: 220px;
+      position: relative;
+      border: 8px solid #fff;
+      border-radius: 10px 10px 0 0;
+      // @include screen('tablet') {
+      //     height: 240px;
+      // }
+
+      // @include screen('mobile') {
+      //     height: 200px;
+      // }
+
+      // @include screen('xs_mobile') {
+      //     height: 140px;
+      // }
+      .function_nav {
+        background: #fff;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin: 0 auto;
+        width: 100%;
+      }
+    }
+
+    // .img-container {
+    //     height: 220px;
+    //     position:relative;
+    //     @include screen('tablet') {
+    //         height: 200px;
+    //     }
+
+    //     @include screen('mobile') {
+    //         height: 160px;
+    //     }
+
+    //     @include screen('xs_mobile') {
+    //         height: 120px;
     //     }
     // }
-    h3.title{
-        display:inline-block;
-        position: relative;
-    }
-
-    >.container {
-        @include gutter(); //gutter 代表左右要留白
-    }
-
-    .main_image {
-        // padding-left:calc( ( 100% - 1100px ) / 2 );
-        // background:$lightColor;
-        >.container{
-            background: url(../images/main_banner01.jpg) top center no-repeat;
-            background-size: cover;
-            height: 220px;
-            position:relative;
-            border: 8px solid #fff;
-            border-radius: 10px 10px 0 0;
-            // @include screen('tablet') {
-            //     height: 240px;
-            // }
-
-            // @include screen('mobile') {
-            //     height: 200px;
-            // }
-
-            // @include screen('xs_mobile') {
-            //     height: 140px;
-            // }
-            .function_nav{
-                background: #fff;
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                margin: 0 auto;
-                width: 100%;
-            }
+    .search {
+      top: 40px;
+      padding: 10px;
+      background: #fff;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+      border-radius: $rounded-angle;
+      @include screen('mobile') {
+        top: 20px;
+      }
+      .search_tabs {
+        .tabItem {
+          > a {
+            padding: 0.8em 0.5em;
+          }
         }
-        
-        // .img-container {
-        //     height: 220px;
-        //     position:relative;
-        //     @include screen('tablet') {
-        //         height: 200px;
-        //     }
-
-        //     @include screen('mobile') {
-        //         height: 160px;
-        //     }
-
-        //     @include screen('xs_mobile') {
-        //         height: 120px;
-        //     }
-        // }
-        .search{
-            top:40px;
-            @include screen('mobile'){
-                top:20px;
-            }
-        }
+      }
     }
+  }
 
-    .function_nav {
-        position: relative;
-        margin: 0 auto;
-        background: #fff;
-        z-index: 10;
-        padding: 0 8px;
-        border-radius: 0 0 10px 10px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, .1);
-        .function {
+  .function_nav {
+    position: relative;
+    margin: 0 auto;
+    background: #fff;
+    z-index: 10;
+    padding: 0 8px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    .function {
+      position: absolute;
+      right: 8px;
+      top: 0;
+
+      @include screen('xs_mobile') {
+        position: static;
+        padding-bottom: 8px;
+      }
+    }
+  }
+  .library_info {
+    background: url(../images/flower_g_01.png) right 8% bottom no-repeat;
+    &:after {
+      display: none;
+    }
+    .info_content {
+      &:before {
+        display: none;
+      }
+      .library_name {
+        padding: 0;
+        font-size: 1.125em;
+        font-weight: bold;
+        margin: 0.5em 0;
+      }
+      ul {
+        li {
+          &:before {
+            content: '';
             position: absolute;
-            right: 8px;
-            top: 0;
-
-            @include screen('xs_mobile') {
-                position: static;
-                padding-bottom: 8px;
-            }
+            width: 12px;
+            height: 1px;
+            background-color: $secondaryColor;
+            left: 0;
+            top: 1.25em;
+          }
         }
+      }
     }
-    .library_info{
-        background: url(../images/flower_g_01.png) right 8% bottom  no-repeat;
-        &:after{
-            display:none;
-        }
-        .info_content{
-            &:before{
-                display:none;
-            }
-            .library_name{
-                padding:0;
-                font-size: 1.125em;
-                font-weight: bold;
-                margin: .5em 0;
-            }
-            ul{
-                li{
-                    &:before{
-                        content: "";
-                        position:absolute;
-                        width:12px;
-                        height:1px;
-                        background-color: $secondaryColor;
-                        left:0;
-                        top:1.25em;
-                    }
-                }
-            }
-        }
+  }
+  .recent_activities {
+    padding-left: 15px;
+    &:before {
+      display: none;
     }
-    .recent_activities{
-        padding-left:15px;
-        &:before{
-            display:none;
-        }
-        .activities_content{
-            background-color: rgba(255,255,255,0);
-        }
+    .activities_content {
+      background-color: rgba(255, 255, 255, 0);
     }
-    .function_block{
-        margin: -60px 0 15px 0;
-    }
+  }
+  .function_block {
+    margin: -60px 0 15px 0;
+  }
 }
-
 
 // @keyframes more_gogo {
 //     0% {

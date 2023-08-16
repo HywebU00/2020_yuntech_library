@@ -1,703 +1,699 @@
 .lp {
-    overflow: hidden;
-    padding-bottom: 2em;
-    table {
-        td {
-            a {
-                @include aSetting_nocolor;
-            }
+  overflow: hidden;
+  padding-bottom: 2em;
+  table {
+    td {
+      a {
+        @include aSetting_nocolor;
+      }
 
-            &.date {
-                text-align: center;
-                color: #666;
+      &.date {
+        text-align: center;
+        color: #666;
 
-                @include screen('mobile') {
-                    text-align: left;
-                }
-            }
-
-            &.num {
-                text-align: center;
-                color: #666;
-
-                @include screen('mobile') {
-                    text-align: left;
-                }
-            }
+        @include screen('mobile') {
+          text-align: left;
         }
+      }
+
+      &.num {
+        text-align: center;
+        color: #666;
+
+        @include screen('mobile') {
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  .questionnaire {
+    td {
+      text-align: center;
     }
 
-    .questionnaire {
-        td {
-            text-align: center;
-        }
-
-        .btn {
-            color: #fff;
-        }
-
-        .name {
-            text-align: left;
-        }
+    .btn {
+      color: #fff;
     }
 
-    .list {
-
-        &>ul,
-        ol {
-            list-style-type: none;
-            padding: 0;
-            border-top: 2px solid $primaryColor;
-            margin-top: 0;
-
-            &>li {
-                padding: 1em 0;
-                border-bottom: 1px solid #DDD;
-                position: relative; // outline: 1px solid blue;
-                overflow: hidden;
-
-                .tag {
-                    margin-left: 2em;
-                }
-
-                &>a {
-                    display: block;
-                    padding-left: 2em;
-                    padding-right: 8em;
-                    position: relative;
-                    line-height: 1.45em;
-                    color: $color-word;
-
-                    @include screen('mobile') {
-                        padding-right: 0;
-                    }
-
-                    &:hover {
-                        color: $aHover;
-                    }
-
-                    .num {
-                        width: 1.5em;
-                        text-align: right;
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-
-                        &:after {
-                            content: ".";
-                            display: inline-block;
-                        }
-                    }
-                }
-
-                .dept {
-                    display: inline-block;
-                    font-size: .875em;
-                    background: #eee;
-                    padding: 0 .5em;
-                    color: $color-word;
-                    margin: .5em 1em 0 2em;
-
-                    &:hover {
-                        color: $color-word;
-                    }
-                }
-
-                time {
-                    display: block;
-                    color: #606060;
-                    font-size: .938em;
-                    position: absolute;
-                    right: 0;
-                    top: 1em;
-
-                    @include screen("mobile") {
-                        position: static;
-                        padding-left: 2em;
-                    }
-                }
-            }
-        }
-
-        .list_picture {
-            @include make-xs-column(12);
-            @include make-sm-column(4);
-            @include make-md-column(4);
-            @include make-lg-column(4);
-            @include gutter();
-        }
-
-        .list_text {
-            @include make-xs-column(12);
-            @include make-sm-column(8);
-            @include make-md-column(8);
-            @include make-lg-column(8);
-            @include gutter();
-
-            time {
-                position: static;
-            }
-
-            time {
-                padding-left: 0;
-            }
-
-            .dept {
-                margin: 0;
-            }
-
-            .brief {
-                display: -webkit-box;
-                -webkit-box-orient: vertical;
-                -webkit-line-clamp: 4;
-                overflow: hidden;
-                max-height: 5.75em;
-            }
-        }
-
-        .list_title {
-            a {
-                display: -webkit-box;
-                -webkit-box-orient: vertical;
-                -webkit-line-clamp: 2;
-                overflow: hidden;
-                max-height: 3.125em;
-                color: $color-word;
-                font-weight: bold;
-
-                @include screen("mobile") {
-                    display: block;
-                    max-height: 100%;
-                }
-
-                &:hover {
-                    color: $secondaryColor;
-                }
-            }
-        }
+    .name {
+      text-align: left;
     }
+  }
 
-    .library_select {
+  .list {
+    & > ul,
+    ol {
+      list-style-type: none;
+      padding: 0;
+      border-top: 2px solid $primaryColor;
+      margin-top: 0;
 
-        button,
-        input[type="button"] {
+      & > li {
+        padding: 1em 0;
+        border-bottom: 1px solid #ddd;
+        position: relative; // outline: 1px solid blue;
+        overflow: hidden;
 
-            // width: 10.37%;
-            // min-width:6.8em;
-            @include screen("tablet") {
-                width: 15.5%;
-            }
+        .tag {
+          margin-left: 2em;
         }
 
-        .pc_select {
-            text-align: left;
-            padding: 0;
-        }
-    }
+        & > a {
+          display: block;
+          padding-left: 2em;
+          padding-right: 8em;
+          position: relative;
+          line-height: 1.45em;
+          color: $color-word;
 
-    .link_grp {
-        padding-top: .83em;
+          @include screen('mobile') {
+            padding-right: 0;
+          }
 
-        ul {
-            list-style: none;
-            padding: 0 0 10px 0;
-            width: 100%;
+          &:hover {
+            color: $aHover;
+          }
 
-            @include screen("mobile") {
-                display: block;
-                overflow: hidden;
-            }
-        }
-
-        li {
-            display: inline-block;
-            margin: 0;
-            box-sizing: border-box;
-            color: $color-word;
-            text-align: center;
-
-            @include screen("mobile") {
-                display: block;
-                float: left;
-                width: auto;
-                white-space: nowrap;
-                margin: .25em 0;
-            }
-
-            a {
-                background: #f1f1f1;
-                display: inline-block;
-                padding: .65em 1em;
-                transition: all .3s;
-                margin: 0 .2em;
-                min-width: 5.5em;
-                border-radius: 30px;
-                color: $color-word;
-                @include screen("mobile") {
-                    margin: 0 .25em;
-                }
-
-                &:hover,
-                &:focus,
-                &.active {
-                    background: $primaryColor;
-                    color: #fff;
-                }
-            }
-        }
-    }
-
-    .instant_info {
-        ul {
-            overflow: hidden;
-            padding-left: 0;
-        }
-
-        li {
-            //@include make-xs-column(12);
-            @include make-sm-column(4);
-            @include make-md-column(4);
-            @include make-lg-column(4);
-            padding: .55em .55em .55em 100px !important;
-            // margin:0 .5em;
-            // background:$lightColor;
-            white-space: nowrap;
-
-            @include screen("tablet") {
-                padding-left: 70px !important;
-            }
-
-            .amount,
-            .text {
-                text-align: left;
-            }
-
-            .amount {
-                display: inline-block;
-            }
+          .num {
+            width: 1.5em;
+            text-align: right;
+            position: absolute;
+            top: 0;
+            left: 0;
 
             &:after {
-                left: 0;
+              content: '.';
+              display: inline-block;
             }
+          }
         }
+
+        .dept {
+          display: inline-block;
+          font-size: 0.875em;
+          background: #eee;
+          padding: 0 0.5em;
+          color: $color-word;
+          margin: 0.5em 1em 0 2em;
+
+          &:hover {
+            color: $color-word;
+          }
+        }
+
+        time {
+          display: block;
+          color: #606060;
+          font-size: 0.938em;
+          position: absolute;
+          right: 0;
+          top: 1em;
+
+          @include screen('mobile') {
+            position: static;
+            padding-left: 2em;
+          }
+        }
+      }
     }
+
+    .list_picture {
+      @include make-xs-column(12);
+      @include make-sm-column(4);
+      @include make-md-column(4);
+      @include make-lg-column(4);
+      @include gutter();
+    }
+
+    .list_text {
+      @include make-xs-column(12);
+      @include make-sm-column(8);
+      @include make-md-column(8);
+      @include make-lg-column(8);
+      @include gutter();
+
+      time {
+        position: static;
+      }
+
+      time {
+        padding-left: 0;
+      }
+
+      .dept {
+        margin: 0;
+      }
+
+      .brief {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+        overflow: hidden;
+        max-height: 5.75em;
+      }
+    }
+
+    .list_title {
+      a {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        max-height: 3.125em;
+        color: $color-word;
+        font-weight: bold;
+
+        @include screen('mobile') {
+          display: block;
+          max-height: 100%;
+        }
+
+        &:hover {
+          color: $secondaryColor;
+        }
+      }
+    }
+  }
+
+  .library_select {
+    button,
+    input[type='button'] {
+      // width: 10.37%;
+      // min-width:6.8em;
+      @include screen('tablet') {
+        width: 15.5%;
+      }
+    }
+
+    .pc_select {
+      text-align: left;
+      padding: 0;
+    }
+  }
+
+  .link_grp {
+    padding-top: 0.83em;
+
+    ul {
+      list-style: none;
+      padding: 0 0 10px 0;
+      width: 100%;
+
+      @include screen('mobile') {
+        display: block;
+        overflow: hidden;
+      }
+    }
+
+    li {
+      display: inline-block;
+      margin: 0;
+      box-sizing: border-box;
+      color: $color-word;
+      text-align: center;
+
+      @include screen('mobile') {
+        display: block;
+        float: left;
+        width: auto;
+        white-space: nowrap;
+        margin: 0.25em 0;
+      }
+
+      a {
+        background: #f1f1f1;
+        display: inline-block;
+        padding: 0.65em 1em;
+        transition: all 0.3s;
+        margin: 0 0.2em;
+        min-width: 5.5em;
+        border-radius: 30px;
+        color: $color-word;
+        @include screen('mobile') {
+          margin: 0 0.25em;
+        }
+
+        &:hover,
+        &:focus,
+        &.active {
+          background: $primaryColor;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .instant_info {
+    ul {
+      overflow: hidden;
+      padding-left: 0;
+    }
+
+    li {
+      //@include make-xs-column(12);
+      @include make-sm-column(4);
+      @include make-md-column(4);
+      @include make-lg-column(4);
+      padding: 0.55em 0.55em 0.55em 100px !important;
+      // margin:0 .5em;
+      // background:$lightColor;
+      white-space: nowrap;
+
+      @include screen('tablet') {
+        padding-left: 70px !important;
+      }
+
+      .amount,
+      .text {
+        text-align: left;
+      }
+
+      .amount {
+        display: inline-block;
+      }
+
+      &:after {
+        left: 0;
+      }
+    }
+  }
 }
 
 //即時資訊
 .instant_info {
-    @include screen('mobile') {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+  @include screen('mobile') {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  ul {
+    list-style: none;
+
+    @include screen('tablet') {
+      padding-left: 0;
+      margin: 0;
+    }
+  }
+
+  li {
+    padding: 0.55em 110px 0.55em 0;
+    position: relative;
+
+    @include screen('tablet') {
+      padding-right: 80px;
     }
 
-    ul {
-        list-style: none;
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      margin-top: -40px;
+      display: inline-block;
+      width: 80px;
+      height: 80px;
 
-        @include screen('tablet') {
-            padding-left: 0;
-            margin: 0;
-        }
+      @include screen('tablet') {
+        width: 60px;
+        height: 60px;
+        margin-top: -30px;
+      }
     }
 
-    li {
-        padding: .55em 110px .55em 0;
-        position: relative;
-
-        @include screen('tablet') {
-            padding-right: 80px;
-        }
-
-        &:after {
-            content: "";
-            position: absolute;
-            right: 0;
-            top: 50%;
-            margin-top: -40px;
-            display: inline-block;
-            width: 80px;
-            height: 80px;
-
-            @include screen('tablet') {
-                width: 60px;
-                height: 60px;
-                margin-top: -30px;
-            }
-        }
-
-        .amount {
-            font-size: 2.5em;
-            color: $primaryColor;
-            font-family: 'Century Gothic';
-            font-weight: bold;
-            font-style: italic;
-            display: block;
-            text-align: right;
-            padding: .3em 0;
-            letter-spacing: -1px;
-        }
-
-        .unit {
-            color: $primaryColor;
-            display: inline-block;
-            padding: 0 .5em;
-
-        }
-
-        .text {
-            display: block;
-            text-align: right;
-        }
-
-        &.readers_card {
-            &:after {
-                content: "";
-                border-radius: 50%;
-                background: darken($primaryColor, 10) url(../images/icon_instant_info_people.png) no-repeat center;
-                background-size: 50%;
-            }
-        }
-
-        &.collections {
-            &:after {
-                content: "";
-                border-radius: 50%;
-                background: $importantColor url(../images/icon_instant_info_book.png) no-repeat center;
-                background-size: 50%;
-            }
-        }
-
-        &.borrowing {
-            &:after {
-                content: "";
-                border-radius: 50%;
-                background: $secondaryColor url(../images/icon_instant_info_lend.png) no-repeat center;
-                background-size: 50%;
-            }
-        }
+    .amount {
+      font-size: 2.5em;
+      color: $primaryColor;
+      font-family: 'Century Gothic';
+      font-weight: bold;
+      font-style: italic;
+      display: block;
+      text-align: right;
+      padding: 0.3em 0;
+      letter-spacing: -1px;
     }
 
-    .update {
-        text-align: right;
+    .unit {
+      color: $primaryColor;
+      display: inline-block;
+      padding: 0 0.5em;
     }
 
-    .more {
-        width: 100%;
+    .text {
+      display: block;
+      text-align: right;
     }
+
+    &.readers_card {
+      &:after {
+        content: '';
+        border-radius: 50%;
+        background: darken($primaryColor, 10) url(../images/icon_instant_info_people.png) no-repeat center;
+        background-size: 50%;
+      }
+    }
+
+    &.collections {
+      &:after {
+        content: '';
+        border-radius: 50%;
+        background: $importantColor url(../images/icon_instant_info_book.png) no-repeat center;
+        background-size: 50%;
+      }
+    }
+
+    &.borrowing {
+      &:after {
+        content: '';
+        border-radius: 50%;
+        background: $secondaryColor url(../images/icon_instant_info_lend.png) no-repeat center;
+        background-size: 50%;
+      }
+    }
+  }
+
+  .update {
+    text-align: right;
+  }
+
+  .more {
+    width: 100%;
+  }
 }
 
 //圖片列表頁
 .album {
-    margin: 1em auto;
+  margin: 1em auto;
 
-    ul {
-        @include li-reset;
+  ul {
+    @include li-reset;
 
-        li {
-            @include make_col(3, 1);
-            overflow: visible;
-
-            .thumbnail {
-                width: 100%;
-                max-width: 90%;
-                margin: 0 auto 1em;
-            }
+    li {
+      @include make_col(3, 1);
+      overflow: visible;
+      background: transparent;
+      .thumbnail {
+        width: 100%;
+        max-width: 90%;
+        margin: 0 auto 1em;
+        img {
+          object-fit: cover;
         }
+      }
     }
+  }
 }
 
 //圖文列表頁(書本)
 .books_list {
-    margin-top: 2em;
+  margin-top: 2em;
 
-    ul {
-        display: flex;
-        flex-wrap: wrap;
-        @include li-reset;
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    @include li-reset;
+  }
+
+  li {
+    flex-basis: 25%;
+    @include gutter();
+    @include screen('tablet') {
+      flex-basis: calc(100% / 3);
     }
+    @include screen('mobile') {
+      flex-basis: 50%;
+    }
+    padding-bottom: 30px;
+  }
 
+  @media screen and (max-width: 468px) {
     li {
-        flex-basis: 25%;
-        @include gutter();
-        @include screen("tablet"){
-            flex-basis: calc(100% / 3);
-        }
-        @include screen("mobile"){
-            flex-basis: 50%;
-        }
-        padding-bottom: 30px;
+      width: 100%;
     }
+  }
 
-    @media screen and (max-width: 468px) {
-        li {
-            width: 100%;
+  .thumbnail {
+    &:hover {
+      .img-container {
+        img {
+          transform: scale(1);
         }
+      }
     }
+  }
 
-    .thumbnail {
-        &:hover {
-            .img-container {
-                img {
-                    transform: scale(1);
-                }
-            }
-        }
+  .img-container {
+    @include aspect-ratio(1, 1);
+  }
+
+  .caption {
+    height: 140px;
+
+    p {
+      margin: 0.5em 0;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
     }
-
-    .img-container {
-        @include aspect-ratio(1, 1);
-    }
-
-    .caption {
-        height: 140px;
-
-        p {
-            margin: .5em 0;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 3;
-            overflow: hidden;
-        }
-    }
+  }
 }
 
 .college_grp {
-    clear: both;
+  clear: both;
 }
 
 .album_list {
-    margin-top: 2em;
+  margin-top: 2em;
 
-    ul {
-        @include li-reset;
-        display: flex;
-        flex-wrap: wrap;
+  ul {
+    @include li-reset;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  li {
+    flex-basis: 25%;
+    @include gutter();
+    @include screen('tablet') {
+      flex-basis: calc(100% / 3);
     }
+    @include screen('mobile') {
+      flex-basis: 50%;
+    }
+    padding-bottom: 30px;
+  }
 
+  @media screen and (max-width: 375px) {
     li {
-        flex-basis: 25%;
-        @include gutter();
-        @include screen("tablet"){
-            flex-basis: calc(100% / 3);
-        }
-        @include screen("mobile"){
-            flex-basis: 50%;
-        }
-        padding-bottom: 30px;
+      width: 100%;
     }
+  }
 
-    @media screen and (max-width: 375px) {
-        li {
-            width: 100%;
-        }
-    }
-
-    .thumbnail {
-        &:hover {
-            .img-container {
-                img {
-                    transform: scale(1);
-                }
-            }
-        }
-    }
-
-    .img-container {
-        background: $color-bg;
-        @include aspect-ratio(1, 1.1);
-
+  .thumbnail {
+    &:hover {
+      .img-container {
         img {
-            object-fit: contain;
+          transform: scale(1);
         }
+      }
     }
+  }
 
-    .caption {
-        .department{
-            margin-bottom: .5em;
-        }
-        .name {
-            font-weight: bold;
-            color: $color-word;
-            font-size: 1.125em;
-        }
-    }
+  .img-container {
+    background: $color-bg;
+    @include aspect-ratio(1, 1.1);
 
-    a {
-        &:hover {
-            .name {
-                color: $aHover;
-            }
-        }
+    img {
+      object-fit: contain;
     }
+  }
+
+  .caption {
+    .department {
+      margin-bottom: 0.5em;
+    }
+    .name {
+      font-weight: bold;
+      color: $color-word;
+      font-size: 1.125em;
+    }
+  }
+
+  a {
+    &:hover {
+      .name {
+        color: $aHover;
+      }
+    }
+  }
 }
 
-
 .lost_list {
-    tbody {
-        background-color: #fff;
-    }
+  tbody {
+    background-color: #fff;
+  }
 }
 
 //活動列表頁
 .activities_list {
-    ul {
-        @include li-reset;
+  ul {
+    @include li-reset;
+
+    li {
+      @include make-xs-column(12);
+      @include make-sm-column(6);
+      @include make-md-column(6);
+      @include make-lg-column(6);
+      @include gutter();
+      margin: 15px 0;
+    }
+  }
+
+  .thumbnail {
+    position: relative;
+    width: 100%;
+
+    &:hover {
+      img {
+        transform: scale(1);
+      }
+    }
+
+    .library_tag {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      padding: 0.5em 1em;
+      color: #fff;
+      background: $secondaryColor;
+    }
+
+    .img-container {
+      @include aspect-ratio(2, 1);
+    }
+
+    .caption {
+      width: 100%;
+      overflow: hidden;
+      padding: 0.5em 120px 1em 1em;
+
+      @include screen('mobile') {
+        padding: 0.5em 1em 1em;
+      }
+
+      h2,
+      h3,
+      h4 {
+        margin-bottom: 0.5em;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .time {
+        word-wrap: word-break;
+        font-size: 0.938em;
+
+        time {
+          font-size: 1em;
+          padding-right: 0.2em;
+          display: inline-block;
+        }
+
+        span {
+          @include screen('xs_mobile') {
+            display: block;
+          }
+        }
+      }
+
+      ul {
+        @include screen('mobile') {
+          padding-right: 120px;
+        }
 
         li {
-            @include make-xs-column(12);
-            @include make-sm-column(6);
-            @include make-md-column(6);
-            @include make-lg-column(6);
-            @include gutter();
-            margin: 15px 0;
+          width: 100%;
+          padding: 0;
+          float: none;
+          margin: 0;
         }
+      }
+
+      .status {
+        position: absolute;
+        width: 100px;
+        height: 80px;
+        right: 1em;
+        bottom: 1em;
+        background: #f1f1f1;
+        padding: 0.5em;
+        color: $color-word;
+        text-align: center;
+
+        &.register {
+          color: $primaryColor;
+        }
+
+        &.full {
+          color: lighten($color-word, 10);
+        }
+
+        span {
+          display: block;
+          padding: 0.2em;
+          font-size: 0.938em;
+        }
+
+        .people {
+          font-size: 1.125em;
+          font-weight: bold;
+          font-family: Georgia;
+        }
+      }
     }
-
-    .thumbnail {
-        position: relative;
-        width: 100%;
-
-        &:hover {
-            img {
-                transform: scale(1);
-            }
-        }
-
-        .library_tag {
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 10;
-            padding: .5em 1em;
-            color: #fff;
-            background: $secondaryColor;
-        }
-
-        .img-container {
-            @include aspect-ratio(2, 1)
-        }
-
-        .caption {
-            width: 100%;
-            overflow: hidden;
-            padding: .5em 120px 1em 1em;
-
-            @include screen("mobile") {
-                padding: .5em 1em 1em;
-            }
-
-            h2,
-            h3,
-            h4 {
-                margin-bottom: .5em;
-                overflow: hidden;
-                white-space: nowrap;
-                text-overflow: ellipsis;
-            }
-
-            .time {
-                word-wrap: word-break;
-                font-size: .938em;
-
-                time {
-                    font-size: 1em;
-                    padding-right: .2em;
-                    display: inline-block;
-                }
-
-                span {
-                    @include screen("xs_mobile") {
-                        display: block;
-                    }
-                }
-            }
-
-            ul {
-                @include screen("mobile") {
-                    padding-right: 120px;
-                }
-
-                li {
-                    width: 100%;
-                    padding: 0;
-                    float: none;
-                    margin: 0;
-                }
-            }
-
-            .status {
-                position: absolute;
-                width: 100px;
-                height: 80px;
-                right: 1em;
-                bottom: 1em;
-                background: #f1f1f1;
-                padding: .5em;
-                color: $color-word;
-                text-align: center;
-
-                &.register {
-                    color: $primaryColor;
-                }
-
-                &.full {
-                    color: lighten($color-word, 10);
-                }
-
-                span {
-                    display: block;
-                    padding: .2em;
-                    font-size: .938em;
-                }
-
-                .people {
-                    font-size: 1.125em;
-                    font-weight: bold;
-                    font-family: Georgia;
-                }
-            }
-        }
-    }
+  }
 }
 
 //資訊列表
 .charts {
-    padding: 2em 0;
+  padding: 2em 0;
 
-    .chart_container {
-        margin: 2em 0;
-        padding: 1em .5em;
-        border: 1px solid $color-gray;
-        background: #fff;
+  .chart_container {
+    margin: 2em 0;
+    padding: 1em 0.5em;
+    border: 1px solid $color-gray;
+    background: #fff;
 
-        .highcharts-credits {
-            display: none;
-        }
+    .highcharts-credits {
+      display: none;
     }
+  }
 }
 
 .chart_grp {
-    margin-bottom: 2em;
-    border-bottom: 1px solid #DDD;
+  margin-bottom: 2em;
+  border-bottom: 1px solid #ddd;
 
-    .chart_container {
-        max-width: 1100px;
-        min-width: 310px;
-        height: 400px;
-        margin: 0 auto;
-    }
+  .chart_container {
+    max-width: 1100px;
+    min-width: 310px;
+    height: 400px;
+    margin: 0 auto;
+  }
 }
 
 //科學指導服務頁面
 .service_select {
-    .form_inline {
-        text-align: center;
+  .form_inline {
+    text-align: center;
 
-        select {
-            min-width: 150px;
-        }
+    select {
+      min-width: 150px;
     }
-
-
+  }
 }

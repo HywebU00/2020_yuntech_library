@@ -158,6 +158,9 @@
         }
       }
     }
+    .form_inline {
+      display: flex;
+    }
     // & > .tabItem {
     //   background: none;
     //   & > a {
@@ -191,7 +194,7 @@
     //   }
     // }
     .tabContent {
-      padding-top: 10px;
+      padding: 20px 0;
       @include screen('mobile') {
         position: absolute;
       }

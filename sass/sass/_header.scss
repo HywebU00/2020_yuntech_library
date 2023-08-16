@@ -443,10 +443,10 @@
     margin-bottom: 0;
     float: right;
 
-    @include screen('xs_mobile') {
-      float: none;
-      width: 100%;
-    }
+    // @include screen('xs_mobile') {
+    //   float: none;
+    //   width: 100%;
+    // }
 
     input,
     input[type='submit'] {
@@ -458,12 +458,12 @@
       border: none;
       border-radius: 20px;
 
-      @include screen('xs_mobile') {
-        background: none;
-        color: $primaryColor;
-        text-decoration: underline;
-        border-radius: 0;
-      }
+      // @include screen('xs_mobile') {
+      //   background: none;
+      //   color: $primaryColor;
+      //   text-decoration: underline;
+      //   border-radius: 0;
+      // }
 
       &:hover,
       &:focus {
