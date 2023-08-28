@@ -443,7 +443,7 @@ $(function () {
         tabItemWidth = (tabwidth - (tabItemLength - 1)) / tabItemLength;
         _tabItem.width(tabItemWidth).css({
           'margin-left': tiGap,
-          'max-width': '190px',
+          //'max-width': '210px',
           //'height': tabItemInnerHeight
         });
         _tabItem.last().css('border-top-right-radius', 30);
