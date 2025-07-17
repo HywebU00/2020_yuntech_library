@@ -530,6 +530,17 @@ $(function () {
       }
     });
   }
+  $('#okContent').on('click', function () {
+    var $tabBlock = $(this).closest('.tabs');
+    var $secondTabLink = $tabBlock.find('.tabItem').eq(1).children('a');
+    if ($secondTabLink.length) {
+      $secondTabLink.trigger('click');
+      var $tabItemHeight = $tabBlock.find('.tabItem').outerHeight();
+      var $activeContent = $secondTabLink.parent().next('.tabContent');
+      var newContentHeight = $activeContent.innerHeight();
+      $tabBlock.height(newContentHeight + $tabItemHeight);
+    }
+  });
   $('.tabs>.tabItem:first-child>a').trigger('click');
   tabSet();
   /*-----------------------------------*/
